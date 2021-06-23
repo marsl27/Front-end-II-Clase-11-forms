@@ -10,7 +10,7 @@ registerBtn.addEventListener("click", () => {
   let elementos = document.getElementsByName("legalAge");
   let opcionesRadio = [];
   let seleccionesRadio = [];
-  elementos.forEach((elemento, i)=>{
+  elementos.forEach((elemento, i) => {
     opcionesRadio[i] = elemento.value;
     seleccionesRadio[i] = elemento.checked;
   })
@@ -21,28 +21,28 @@ registerBtn.addEventListener("click", () => {
   // 5 Validamos si el usuario es mayor de edad. Si no, mostramos
   // un mensaje de error: "Debes ser mayor de edad para registrarte en el sitio"
   let form = document.querySelector("form");
-  function validarMayorEdad(arrayRadio){
-    if(arrayRadio[1]==true){
-      form.addEventListener("submit", e =>{
+  function validarMayorEdad(arrayRadio) {
+    if (arrayRadio[1] == true) {
+      form.addEventListener("submit", e => {
         e.preventDefault();
       })
       alert("Debes ser mayor de edad para registrarte en el sitio")
       return false;
-    }else{
+    } else {
       return true;
     }
   }
 
   // 6 Validamos si el usuario aceptó los términos y condiciones. Si no, mostramos
   // un mensaje de error: "Debes aceptar los TyCs para registrarte en el sitio"
-  function aceptaTyC(check){
-    if(check==false){
-      form.addEventListener("submit", e =>{
+  function aceptaTyC(check) {
+    if (check == false) {
+      form.addEventListener("submit", e => {
         e.preventDefault();
       })
       alert("Debes aceptar los TyCs para registrarte en el sitio")
       return false;
-    }else{
+    } else {
       return true;
     }
   }
@@ -53,8 +53,8 @@ registerBtn.addEventListener("click", () => {
     mail: email,
     contraseña: password,
   }
-  function validarDatosCorrectos(){
-    if(aceptaTyC(seleccionCheck) && validarMayorEdad(seleccionesRadio)){
+  function validarDatosCorrectos() {
+    if (aceptaTyC(seleccionCheck) && validarMayorEdad(seleccionesRadio)) {
       console.log(datosPersona);
     }
   }
